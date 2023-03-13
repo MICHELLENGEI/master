@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "502972589440",
+    "project_id": "tree-planting-6eb81",
+    "storage_bucket": "tree-planting-6eb81.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502972589440:android:3b41bff1434ed152ab4d65",
+        "android_client_info": {
+          "package_name": "com.example.treeplantingapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502972589440-aq7lg6vic0r5j1hfssi9dkrq5ofuvpf0.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.treeplantingapp",
+            "certificate_hash": "65bb5fb517ff675b25de825ee0e5d77a829bfa90"
+          }
+        },
+        {
+          "client_id": "502972589440-v5d742njl5esa1evfll5ularp47uhvqv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyASTeT5IVyAjWp3uKAEFgYRJFM3TrIaO5I"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "502972589440-v5d742njl5esa1evfll5ularp47uhvqv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

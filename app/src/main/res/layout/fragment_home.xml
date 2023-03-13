@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/homeFrag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".HomeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Plant a tree,"
+        android:textSize="40sp"
+        android:layout_marginLeft="90dp"
+        android:textStyle="italic"
+        android:textAlignment="center"
+        android:textColor="@color/Forest_Green"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Make a change."
+        android:layout_marginTop="40dp"
+        android:textSize="40sp"
+        android:layout_marginLeft="60dp"
+        android:textStyle="italic"
+        android:textColor="@color/Forest_Green"/>
+
+</FrameLayout>

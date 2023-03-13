@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/addTreeFrag"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddTreeFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/peopleplantingtree" />
+
+    <EditText
+        android:id="@+id/editTextTreeName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Name of tree"
+        android:textSize="20sp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="360dp"/>
+    <EditText
+        android:id="@+id/editTextTreeSpecies"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Species of tree"
+        android:textSize="20sp"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="420dp"/>
+    <EditText
+        android:id="@+id/editTextNumber0fTrees"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Number of trees"
+        android:textSize="20sp"
+        android:inputType="number"
+        android:paddingLeft="10dp"
+        android:layout_marginTop="480dp"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="560dp"
+        android:text="Add"
+        android:textSize="20sp"/>
+
+
+</FrameLayout>

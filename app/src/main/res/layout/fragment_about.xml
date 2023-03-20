@@ -16,7 +16,7 @@
         android:textSize="30sp" />
 
     <TextView
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="220dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="20dp"
@@ -28,5 +28,20 @@ We care to restore and conserve the biodiversity since tropical forests are home
         android:textSize="15sp"
         android:textStyle="italic"
         android:textAlignment="center"/>
+
+    <ImageView
+        android:id="@+id/imageView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|right"
+        android:src="@drawable/right"
+        android:contentDescription="TODO" />
+    <ImageView
+        android:id="@+id/imageView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|left"
+        android:src="@drawable/top"
+        android:contentDescription="TODO" />
 
 </FrameLayout>

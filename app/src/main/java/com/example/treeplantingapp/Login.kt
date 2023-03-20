@@ -1,18 +1,15 @@
 package com.example.treeplantingapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.treeplantingapp.databinding.ActivityLoginBinding
-import com.example.treeplantingapp.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_login.*
-import kotlinx.android.synthetic.main.activity_main.*
 
 class Login : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -22,17 +19,19 @@ class Login : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
         auth = Firebase.auth
         binding.buttonLogin.setOnClickListener {
 
             val email = binding.eTLoginEmailAddress.text.toString()
             val password = binding.eTLoginNumberPassword.text.toString()
-            if (checkAllField()){
+            if (checkAllField()) {
+
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                     if (it.isSuccessful) {
-                        val intentHome = Intent(this, HomeActivity::class.java)
+                        val intentHome = Intent(this@Login, HomeActivity::class.java)
                         startActivity(intentHome)
-                        finish()
+                       // finish()
                     } else {
                         Log.e("error: ", it.exception.toString())
                     }

@@ -1,25 +1,30 @@
 package com.example.treeplantingapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import kotlinx.android.synthetic.main.activity_main.*
+import androidx.appcompat.app.AppCompatActivity
+import com.example.treeplantingapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        btnHomeLogin.setOnClickListener {
-            val intentLogin = Intent(this,Login::class.java)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.buttonHomeLogin.setOnClickListener {
+            val intentLogin = Intent(this, Login::class.java)
             startActivity(intentLogin)
         }
-            btnHomeSignup.setOnClickListener {
-                val intentSignup = Intent(this,Signup::class.java)
-                startActivity(intentSignup)
-            }
-        textView2.setOnClickListener {
-            val intentPassword = Intent(this,ForgotPasswordActivity::class.java)
+        binding.btnHomeSignup.setOnClickListener {
+            val intentSignup = Intent(this, Signup::class.java)
+            startActivity(intentSignup)
+        }
+        binding.textView2.setOnClickListener {
+            val intentPassword = Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intentPassword)
         }
-        }
     }
+}

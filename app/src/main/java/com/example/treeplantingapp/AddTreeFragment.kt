@@ -1,59 +1,72 @@
 package com.example.treeplantingapp
 
+//import kotlinx.android.synthetic.main.fragment_add_tree.*
+//import kotlinx.android.synthetic.main.fragment_add_tree.view.*
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.text.Editable
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.treeplantingapp.data.Tree
+import com.example.treeplantingapp.data.TreeDatabase
+import com.example.treeplantingapp.databinding.FragmentAddTreeBinding
+import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [AddTreeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AddTreeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
-    }
+    private lateinit var binding: FragmentAddTreeBinding
+    private lateinit var treeDatabase: TreeDatabase
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_add_tree, container, false)
+        binding = FragmentAddTreeBinding.inflate(layoutInflater)
+
+        val navController = findNavController()
+        navController.navigate(R.id.action_homeFragment_to_addTreeFragment2)
+        binding.addTree.setOnClickListener {
+            insertDataToDatabase()
+        }
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AddTreeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AddTreeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+
+    @OptIn(DelicateCoroutinesApi::class)
+    private fun insertDataToDatabase() {
+
+        val treeName = binding.editTextTreeName.text.toString()
+        val treeLocation = binding.editTextTreeLocation.text.toString()
+        val treeNumber = binding.editTextNumber0fTrees.text
+
+        if(inputCheck(treeName, treeLocation, treeNumber)){
+            //tree object
+            val tree = Tree(0,treeName, treeLocation, Integer.parseInt(treeNumber.toString()))
+            //add data to database
+            GlobalScope.launch(Dispatchers.IO) {
+                treeDatabase.treeDao().insert(tree)
             }
+            Toast.makeText(requireContext(),"Tree added Successfully",Toast.LENGTH_LONG).show()
+            //Navigate back
+            val navController = findNavController()
+            navController.navigate(R.id.action_addTreeFragment_to_homeFragment)
+
+
+        }
+        else{
+            Toast.makeText(requireContext(),"Fill out all fields",Toast.LENGTH_LONG).show()
+        }
     }
+    private fun inputCheck(treeName: String,treeLocation :String, treeNumber: Editable):Boolean{
+        return !(TextUtils.isEmpty(treeName)&& TextUtils.isEmpty(treeLocation) && treeNumber.isEmpty())
+    }
+
+
 }

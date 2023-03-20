@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:showIn="navigation_view">
+    tools:showIn="navigation_view"
+    android:id="@+id/nav_item">
     <group android:checkableBehavior="single">
 <item
     android:title="Account">
@@ -10,6 +11,7 @@
             android:id="@+id/homeFragment"
             android:title="Home"
             android:icon="@drawable/ic_home_black_24dp"/>
+
         <item
             android:id="@+id/profileFragment"
             android:title="Profile"
@@ -19,8 +21,8 @@
             android:title="Add Tree"
             android:icon="@drawable/ic_baseline_add_24"/>
         <item
-            android:id="@+id/removeTreeFragment"
-            android:title="Remove Tree"
+            android:id="@+id/deleteTreeFragment"
+            android:title="Delete Tree"
             android:icon="@drawable/ic_baseline_remove_24"/>
         <item
             android:id="@+id/recommendationFragment"

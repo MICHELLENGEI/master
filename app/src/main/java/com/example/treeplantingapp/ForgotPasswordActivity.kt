@@ -1,17 +1,15 @@
 package com.example.treeplantingapp
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.util.Patterns
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.example.treeplantingapp.databinding.ActivityForgotPasswordBinding
-import com.example.treeplantingapp.databinding.ActivitySignupBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_forgot_password.*
 
 class ForgotPasswordActivity : AppCompatActivity() {
     private lateinit var auth: FirebaseAuth
@@ -39,7 +37,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
             }
 
         }
-        btnCancel.setOnClickListener {
+        binding.btnCancel.setOnClickListener {
             val intentCancel = Intent(this,MainActivity::class.java)
             startActivity(intentCancel)
             finish()

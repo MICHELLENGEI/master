@@ -84,7 +84,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:src="@drawable/images"
-        android:layout_marginTop="20dp"/>
+        android:layout_marginTop="20dp"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageViewFacebook"
@@ -92,7 +93,8 @@
         android:layout_height="30dp"
         android:layout_marginLeft="140dp"
         android:layout_marginTop="140dp"
-        android:src="@drawable/face" />
+        android:src="@drawable/face"
+        android:contentDescription="TODO" />
 
     <ImageView
         android:id="@+id/imageViewTwitter"
@@ -100,14 +102,16 @@
         android:layout_height="30dp"
         android:layout_marginLeft="220dp"
         android:layout_marginTop="140dp"
-        android:src="@drawable/twit" />
+        android:src="@drawable/twit"
+        android:contentDescription="TODO" />
     <ImageView
         android:id="@+id/imageViewGram"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginLeft="180dp"
         android:layout_marginTop="140dp"
-        android:src="@drawable/ram" />
+        android:src="@drawable/ram"
+        android:contentDescription="TODO" />
 
     <Button
         android:id="@+id/buttonSendMail"
@@ -116,6 +120,14 @@
         android:text="Send"
         android:layout_marginTop="560dp"
         android:layout_marginLeft="150dp"/>
+
+    <ImageView
+        android:id="@+id/imageView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/left"
+        android:layout_gravity="bottom|left"
+        android:contentDescription="TODO" />
 
 
 </FrameLayout>

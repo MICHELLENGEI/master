@@ -1,52 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_item"
     tools:showIn="navigation_view">
     <group android:checkableBehavior="single">
-<item
-    android:title="Account">
-    <menu>
-        <item
-            android:id="@+id/homeFragment"
-            android:title="Home"
-            android:icon="@drawable/ic_home_black_24dp"/>
-        <item
-            android:id="@+id/profileFragment"
-            android:title="Profile"
-            android:icon="@drawable/ic_baseline_profile_24"/>
-        <item
-            android:id="@+id/addTreeFragment"
-            android:title="Add Tree"
-            android:icon="@drawable/ic_baseline_add_24"/>
-        <item
-            android:id="@+id/removeTreeFragment"
-            android:title="Remove Tree"
-            android:icon="@drawable/ic_baseline_remove_24"/>
-        <item
-            android:id="@+id/recommendationFragment"
-            android:title="Tree Recommendation"
-            android:icon="@drawable/ic_baseline_recommend_24"/>
+        <item android:title="Account"
+            tools:ignore="HardcodedText">
+            <menu>
+                <item
+                    android:id="@+id/homeFragment"
+                    android:icon="@drawable/ic_home_black_24dp"
+                    android:title="Home"
+                    tools:ignore="HardcodedText" />
 
-        <item
-            android:id="@+id/aboutFragment"
-            android:title="About Us"
-            android:icon="@drawable/ic_baseline_aboutus_24"/>
-        <item
-            android:id="@+id/contactFragment"
-            android:title="Contact Us"
-            android:icon="@drawable/ic_baseline_email_24"/>
+                <item
+                    android:id="@+id/profileFragment"
+                    android:icon="@drawable/ic_baseline_profile_24"
+                    android:title="Profile"
+                    tools:ignore="HardcodedText"/>
+                <item
+                    android:id="@+id/addTreeFragment"
+                    android:icon="@drawable/ic_baseline_add_24"
+                    android:title="Add Tree"
+                    tools:ignore="HardcodedText"/>
+                <item
+                    android:id="@+id/deleteTreeFragment"
+                    android:icon="@drawable/ic_baseline_remove_24"
+                    android:title="@string/delete_tree" />
+                <item
+                    android:id="@+id/recommendationsFragment"
+                    android:icon="@drawable/ic_baseline_recommend_24"
+                    android:title="Tree Recommendation"
+                    tools:ignore="HardcodedText"/>
+                <item
+                    android:id="@+id/contactFragment"
+                    android:icon="@drawable/ic_baseline_email_24"
+                    android:title="@string/contact_us" />
+                <item
+                    android:id="@+id/aboutFragment"
+                    android:icon="@drawable/ic_baseline_aboutus_24"
+                    android:title="@string/about_us" />
 
-    </menu>
-    </item>
-<item android:title="Log Out">
-    <menu>
-        <group>
-        <item
-        android:id="@+id/logOut"
-        android:title="Log Out"
-        android:icon="@drawable/ic_baseline_logout_24"/>
-    </group>
-    </menu>
-</item>
+
+            </menu>
+        </item>
+        <item android:title="@string/log_out">
+            <menu>
+                <group>
+                    <item
+                        android:id="@+id/logOut"
+                        android:icon="@drawable/ic_baseline_logout_24"
+                        android:title="Log Out"
+                        tools:ignore="HardcodedText"/>
+                </group>
+            </menu>
+        </item>
     </group>
 </menu>

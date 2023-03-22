@@ -7,7 +7,7 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textViewForgotPass"
+        android:id="@+id/textViewPlantTree"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Plant a Tree"
@@ -23,7 +23,7 @@
         app:layout_constraintVertical_bias="0.071" />
 
     <Button
-        android:id="@+id/btnHomeLogin"
+        android:id="@+id/buttonHomeLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"

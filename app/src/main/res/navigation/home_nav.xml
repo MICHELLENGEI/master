@@ -9,12 +9,20 @@
         android:id="@+id/homeFragment"
         android:name="com.example.treeplantingapp.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home">
+        <action
+            android:id="@+id/action_homeFragment_to_addTreeFragment2"
+            app:destination="@id/addTreeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/addTreeFragment"
         android:name="com.example.treeplantingapp.AddTreeFragment"
         android:label="Add a tree"
-        tools:layout="@layout/fragment_add_tree" />
+        tools:layout="@layout/fragment_add_tree" >
+        <action
+            android:id="@+id/action_addTreeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/aboutFragment"
         android:name="com.example.treeplantingapp.AboutFragment"
@@ -27,12 +35,22 @@
         tools:layout="@layout/fragment_contact" />
     <fragment
         android:id="@+id/profileFragment"
-        android:name="com.example.treeplantingapp.profileFragment"
+        android:name="com.example.treeplantingapp.ProfileFragment"
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/removeTreeFragment"
-        android:name="com.example.treeplantingapp.RemoveTreeFragment"
+        android:id="@+id/deleteTreeFragment"
+        android:name="com.example.treeplantingapp.DeleteTreeFragment"
         android:label="Remove Tree"
-        tools:layout="@layout/fragment_remove_tree" />
+        tools:layout="@layout/fragment_delete_tree" >
+
+        <action
+            android:id="@+id/action_deleteTreeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recommendationsFragment"
+        android:name="com.example.treeplantingapp.RecommendationsFragment"
+        android:label="Tree Recommendation"
+        tools:layout="@layout/fragment_recommendations" />
 </navigation>

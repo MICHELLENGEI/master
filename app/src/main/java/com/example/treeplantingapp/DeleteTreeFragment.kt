@@ -1,7 +1,5 @@
 package com.example.treeplantingapp
 
-//import kotlinx.android.synthetic.main.fragment_add_tree.*
-//import kotlinx.android.synthetic.main.fragment_add_tree.view.*
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextUtils
@@ -11,16 +9,17 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
-import com.example.treeplantingapp.data.Tree
+import com.example.treeplantingapp.data.Plant
 import com.example.treeplantingapp.data.TreeDatabase
-import com.example.treeplantingapp.databinding.FragmentAddTreeBinding
-import kotlinx.coroutines.DelicateCoroutinesApi
+import com.example.treeplantingapp.databinding.FragmentDeleteTreeBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 
-class AddTreeFragment : Fragment() {
-    private lateinit var binding: FragmentAddTreeBinding
+
+class DeleteTreeFragment : Fragment() {
+
+    private lateinit var binding: FragmentDeleteTreeBinding
     private lateinit var treeDatabase: TreeDatabase
 
     override fun onCreateView(
@@ -28,45 +27,46 @@ class AddTreeFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        binding = FragmentAddTreeBinding.inflate(layoutInflater)
+        binding = FragmentDeleteTreeBinding.inflate(layoutInflater)
         treeDatabase = TreeDatabase.getDatabase(requireContext())
 
-        binding.addTree.setOnClickListener {
+        binding.submitTree.setOnClickListener {
             insertDataToDatabase()
         }
         return binding.root
     }
 
-
-    @OptIn(DelicateCoroutinesApi::class)
     private fun insertDataToDatabase() {
+        val locationTree = binding.etTreeLocation.text.toString()
+        val numberTree = binding.etNumber0fTrees.text
+        val cutReason = binding.etReason.text.toString()
 
-        val treeName = binding.editTextTreeName.text.toString()
-        val treeLocation = binding.editTextTreeLocation.text.toString()
-        val treeNumber = binding.editTextNumber0fTrees.text
-
-        if (inputCheck(treeName, treeLocation, treeNumber)) {
+        if (inputCheck(locationTree, numberTree, cutReason)) {
             //tree object
-            val tree = Tree(
-                treeName = treeName,
-                treeLocation = treeLocation,
-                treeNumber = Integer.parseInt(treeNumber.toString())
+            val plant = Plant(
+                locationTree = locationTree,
+                numberTree = Integer.parseInt(numberTree.toString()),
+                cutReason = cutReason
+
             )
             //add data to database
             GlobalScope.launch(Dispatchers.IO) {
-                treeDatabase.treeDao().insert(tree)
+                treeDatabase.plantDao().addPlant(plant)
             }
             Toast.makeText(requireContext(), "Tree added Successfully", Toast.LENGTH_LONG).show()
-            //Navigate back
+            //Navigate back to home
             val navController = findNavController()
-            navController.navigate(R.id.action_addTreeFragment_to_homeFragment)
+            navController.navigate(R.id.action_deleteTreeFragment_to_homeFragment)
         } else {
             Toast.makeText(requireContext(), "Fill out all fields", Toast.LENGTH_LONG).show()
         }
+
     }
 
-    private fun inputCheck(treeName: String, treeLocation: String, treeNumber: Editable): Boolean {
-        return !(TextUtils.isEmpty(treeName) && TextUtils.isEmpty(treeLocation) && treeNumber.isEmpty())
+    private fun inputCheck(locationTree: String, numberTree: Editable, cutReason: String): Boolean {
+        return !(TextUtils.isEmpty(locationTree) && numberTree.isEmpty() && TextUtils.isEmpty(
+            cutReason
+        ))
     }
 
 

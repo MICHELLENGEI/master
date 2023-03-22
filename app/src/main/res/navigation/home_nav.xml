@@ -39,8 +39,18 @@
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/removeTreeFragment"
+        android:id="@+id/deleteTreeFragment"
         android:name="com.example.treeplantingapp.DeleteTreeFragment"
         android:label="Remove Tree"
-        tools:layout="@layout/fragment_delete_tree" />
+        tools:layout="@layout/fragment_delete_tree" >
+
+        <action
+            android:id="@+id/action_deleteTreeFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/recommendationsFragment"
+        android:name="com.example.treeplantingapp.RecommendationsFragment"
+        android:label="Tree Recommendation"
+        tools:layout="@layout/fragment_recommendations" />
 </navigation>

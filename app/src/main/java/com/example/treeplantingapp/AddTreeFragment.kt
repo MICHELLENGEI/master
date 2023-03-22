@@ -29,9 +29,8 @@ class AddTreeFragment : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         binding = FragmentAddTreeBinding.inflate(layoutInflater)
+        treeDatabase = TreeDatabase.getDatabase(requireContext())
 
-        val navController = findNavController()
-        navController.navigate(R.id.action_homeFragment_to_addTreeFragment2)
         binding.addTree.setOnClickListener {
             insertDataToDatabase()
         }
@@ -46,26 +45,28 @@ class AddTreeFragment : Fragment() {
         val treeLocation = binding.editTextTreeLocation.text.toString()
         val treeNumber = binding.editTextNumber0fTrees.text
 
-        if(inputCheck(treeName, treeLocation, treeNumber)){
+        if (inputCheck(treeName, treeLocation, treeNumber)) {
             //tree object
-            val tree = Tree(0,treeName, treeLocation, Integer.parseInt(treeNumber.toString()))
+            val tree = Tree(
+                treeName = treeName,
+                treeLocation = treeLocation,
+                treeNumber = Integer.parseInt(treeNumber.toString())
+            )
             //add data to database
             GlobalScope.launch(Dispatchers.IO) {
                 treeDatabase.treeDao().insert(tree)
             }
-            Toast.makeText(requireContext(),"Tree added Successfully",Toast.LENGTH_LONG).show()
+            Toast.makeText(requireContext(), "Tree added Successfully", Toast.LENGTH_LONG).show()
             //Navigate back
             val navController = findNavController()
             navController.navigate(R.id.action_addTreeFragment_to_homeFragment)
-
-
-        }
-        else{
-            Toast.makeText(requireContext(),"Fill out all fields",Toast.LENGTH_LONG).show()
+        } else {
+            Toast.makeText(requireContext(), "Fill out all fields", Toast.LENGTH_LONG).show()
         }
     }
-    private fun inputCheck(treeName: String,treeLocation :String, treeNumber: Editable):Boolean{
-        return !(TextUtils.isEmpty(treeName)&& TextUtils.isEmpty(treeLocation) && treeNumber.isEmpty())
+
+    private fun inputCheck(treeName: String, treeLocation: String, treeNumber: Editable): Boolean {
+        return !(TextUtils.isEmpty(treeName) && TextUtils.isEmpty(treeLocation) && treeNumber.isEmpty())
     }
 
 

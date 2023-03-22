@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -11,10 +11,10 @@
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello!"
+        android:text="@string/hello2"
         android:textSize="40sp"
         android:textColor="@color/Forest_Green"
-        android:layout_marginLeft="10dp"/>
+        android:layout_marginStart="10dp"/>
 
     <EditText
         android:id="@+id/etTreeLocation"
@@ -22,8 +22,12 @@
         android:layout_height="wrap_content"
         android:hint="Location of tree"
         android:textSize="20sp"
-        android:paddingLeft="10dp"
-        android:layout_marginTop="360dp"/>
+        android:inputType="text"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="360dp"
+        tools:ignore="HardcodedText"
+        android:autofillHints="" />
     <EditText
         android:id="@+id/etNumber0fTrees"
         android:layout_width="match_parent"
@@ -31,8 +35,11 @@
         android:hint="Number of trees"
         android:textSize="20sp"
         android:inputType="number"
-        android:paddingLeft="10dp"
-        android:layout_marginTop="420dp"/>
+        android:autofillHints=""
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="420dp"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:id="@+id/etReason"
@@ -40,17 +47,24 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="490dp"
         android:hint="Reason for cutting eg firewood"
-        android:paddingLeft="10dp"
-        android:textSize="20sp" />
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="20sp"
+        tools:ignore="HardcodedText"
+        android:inputType="text"
+        android:autofillHints="" />
 
     <Button
         android:id="@+id/submitTree"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="150dp"
-        android:layout_marginTop="540dp"
+        android:layout_marginStart="150dp"
+        android:layout_marginTop="560dp"
         android:text="Submit"
+        tools:ignore="HardcodedText"
         android:textSize="20sp"/>
+
+
 
     <ImageView
         android:id="@+id/imageView7"
@@ -58,14 +72,16 @@
         android:layout_height="250dp"
         android:layout_marginTop="60dp"
         android:src="@drawable/treecut"
-        android:contentDescription="TODO" />
+        android:contentDescription="People cutting"
+        tools:ignore="HardcodedText"/>
 
     <ImageView
         android:id="@+id/imageView10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/left"
-        android:layout_gravity="bottom|left"
-        android:contentDescription="TODO" />
+        android:layout_gravity="bottom|start"
+        android:contentDescription="left image"
+        tools:ignore="HardcodedText"/>
 
 </FrameLayout>

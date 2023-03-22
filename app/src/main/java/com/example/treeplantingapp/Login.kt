@@ -31,7 +31,7 @@ class Login : AppCompatActivity() {
                     if (it.isSuccessful) {
                         val intentHome = Intent(this@Login, HomeActivity::class.java)
                         startActivity(intentHome)
-                       // finish()
+                        // finish()
                     } else {
                         Log.e("error: ", it.exception.toString())
                     }

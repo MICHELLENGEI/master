@@ -4,7 +4,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ProfileFragment">
-
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -12,16 +11,18 @@
         android:textSize="40sp"
         android:textStyle="italic"
         android:textColor="@color/Forest_Green"
-        android:paddingLeft="20dp"/>
+        android:paddingStart="20dp"
+        tools:ignore="HardcodedText" />
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Details: "
+        tools:ignore="HardcodedText"
         android:textColor="@color/Parsley"
         android:textSize="25sp"
         android:textStyle="italic"
         android:layout_marginTop="400dp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginStart="20dp"/>
 
 
     <TextView
@@ -30,19 +31,22 @@
         android:text="Cut down trees "
         android:layout_marginTop="480dp"
         android:textSize="20sp"
-        android:layout_marginLeft="20dp"/>
+        tools:ignore="HardcodedText"
+        android:layout_marginStart="20dp"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="280dp"
+        android:layout_marginStart="280dp"
         android:layout_marginTop="480dp"
         android:text="Number of trees "
+        tools:ignore="HardcodedText"
         android:textColor="@color/Forest_Green" />
     <TextView
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="Planted trees "
+        tools:ignore="HardcodedText"
     android:layout_marginTop="440dp"
         android:textSize="20sp"
     android:paddingLeft="20dp"/>
@@ -50,41 +54,45 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Total  "
+        tools:ignore="HardcodedText"
         android:layout_marginTop="440dp"
         android:textColor="@color/Forest_Green"
-        android:layout_marginLeft="280dp"/>
+        android:layout_marginStart="280dp"/>
 
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="95dp"
+        android:layout_marginStart="95dp"
         android:layout_marginTop="80dp"
         android:src="@drawable/smaller_tree"
-        android:contentDescription="TODO" />
+        android:contentDescription="Tree"
+        tools:ignore="HardcodedText"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Trees remainig "
+        android:text="Trees remaining "
         android:layout_marginTop="520dp"
         android:textSize="20sp"
-        android:layout_marginLeft="20dp"/>
+        android:layout_marginStart="20dp"
+        tools:ignore="HardcodedText"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="280dp"
+        android:layout_marginStart="280dp"
         android:layout_marginTop="520dp"
         android:text="Number of trees "
-        android:textColor="@color/Forest_Green" />
+        android:textColor="@color/Forest_Green"
+        tools:ignore="HardcodedText"/>
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|left"
+        android:layout_gravity="bottom|start"
         android:src="@drawable/left"
-        tools:ignore="RtlHardcoded"
-        android:contentDescription="TODO" />
+        android:contentDescription="left image"
+        tools:ignore="HardcodedText"/>
 
 
 </FrameLayout>

@@ -19,16 +19,12 @@
                     android:title="Profile"
                     tools:ignore="HardcodedText"/>
                 <item
-                    android:id="@+id/addTreeFragment"
+                    android:id="@+id/listFragment"
                     android:icon="@drawable/ic_baseline_add_24"
-                    android:title="Add Tree"
+                    android:title="Planted Trees"
                     tools:ignore="HardcodedText"/>
                 <item
-                    android:id="@+id/deleteTreeFragment"
-                    android:icon="@drawable/ic_baseline_remove_24"
-                    android:title="@string/delete_tree" />
-                <item
-                    android:id="@+id/recommendationsFragment"
+                    android:id="@+id/recommendationFragment"
                     android:icon="@drawable/ic_baseline_recommend_24"
                     android:title="Tree Recommendation"
                     tools:ignore="HardcodedText"/>
@@ -48,7 +44,7 @@
             <menu>
                 <group>
                     <item
-                        android:id="@+id/logOut"
+                        android:id="@+id/logoutFragment"
                         android:icon="@drawable/ic_baseline_logout_24"
                         android:title="Log Out"
                         tools:ignore="HardcodedText"/>

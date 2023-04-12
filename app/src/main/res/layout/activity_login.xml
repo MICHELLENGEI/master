@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login"
-    android:padding="10dp">
+    android:padding="10dp"
+    tools:context=".Login">
 
     <TextView
         android:id="@+id/textView3"
@@ -19,40 +19,16 @@
         app:layout_constraintHorizontal_bias="0.055"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.073" />
+        app:layout_constraintVertical_bias="0.073"
+        tools:ignore="HardcodedText" />
 
-    <Button
-        android:id="@+id/buttonLogin"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Login"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.868" />
-
-    <TextView
-        android:id="@+id/textViewSignUp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/Forest_Green"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        android:text="Don't have an account? Sign up"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.557"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.956" />
 
     <TextView
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Back"
+        tools:ignore="HardcodedText"
         android:textColor="@color/Forest_Green"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -68,39 +44,95 @@
         android:layout_height="211dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.458"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.319"
-        app:srcCompat="@drawable/smaller_tree" />
+        app:layout_constraintVertical_bias="0.28"
+        app:srcCompat="@drawable/smaller_tree"
+        android:contentDescription="image"
+        tools:ignore="HardcodedText"/>
 
-    <EditText
-        android:id="@+id/eTLoginEmailAddress"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Email"
-        android:inputType="textEmailAddress"
+        android:gravity="center_horizontal"
+        android:orientation="vertical"
+        android:paddingHorizontal="24dp"
+        android:paddingVertical="48dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.653" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3">
 
-    <EditText
-        android:id="@+id/eTLoginNumberPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Password"
-        android:inputType="numberPassword"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.772" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:hintEnabled="true"
+            app:passwordToggleEnabled="false"
+            app:passwordToggleTint="@color/Parsley">
+
+            <EditText
+                android:id="@+id/eTLoginEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:autofillHints="Email"
+                android:background="@color/white"
+                android:drawablePadding="16dp"
+                android:hint="Enter E-mail"
+                tools:ignore="HardcodedText"
+                android:inputType="textEmailAddress"
+                android:maxLines="1"
+                android:paddingHorizontal="16dp"
+                 />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            app:hintEnabled="true"
+            app:passwordToggleEnabled="true"
+            app:passwordToggleTint="@color/Parsley">
+
+            <EditText
+                android:id="@+id/eTLoginPassword"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:autofillHints="Password"
+                android:background="@color/white"
+                android:hint="Enter Password"
+                android:inputType="textPassword"
+                android:maxLength="16"
+                android:maxLines="1"
+                android:paddingHorizontal="16dp"
+                tools:ignore="HardcodedText" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/buttonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:elevation="0dp"
+            android:text="Login"
+            tools:ignore="HardcodedText"
+            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textViewSignUp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Don't have an account? Sign up"
+            android:textColor="@color/Forest_Green"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            tools:ignore="HardcodedText"/>
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -6,8 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".AddTreeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-
     <ImageView
         android:id="@+id/imageView6"
         android:layout_width="300dp"
@@ -60,16 +58,6 @@
         android:text="@string/add"
         android:textSize="20sp"/>
 
-    <TextView
-        android:id="@+id/textView9"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/hello"
-        android:textSize="40sp"
-        android:textStyle="italic"
-        android:textColor="@color/Forest_Green"
-        android:layout_marginStart="10dp"/>
-
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="wrap_content"
@@ -81,3 +69,5 @@
 
 
 </FrameLayout>
+
+

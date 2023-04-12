@@ -7,34 +7,34 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/plant_a_tree"
-        android:textSize="40sp"
         android:layout_marginStart="90dp"
-        android:textStyle="italic"
+        android:text="@string/plant_a_tree"
         android:textAlignment="center"
-        android:textColor="@color/Forest_Green"/>
+        android:textColor="@color/Forest_Green"
+        android:textSize="40sp"
+        android:textStyle="italic" />
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Make a change."
-        android:layout_marginTop="40dp"
-        android:textSize="40sp"
         android:layout_marginStart="60dp"
-        android:textStyle="italic"
+        android:layout_marginTop="40dp"
+        android:text="Make a change."
         android:textColor="@color/Forest_Green"
+        android:textSize="40sp"
+        android:textStyle="italic"
         tools:ignore="HardcodedText" />
 
     <ImageView
-    android:id="@+id/imageView8"
-    android:layout_width="395dp"
-    android:layout_height="237dp"
-    android:layout_gravity="bottom|start"
-    android:src="@drawable/left"
-    android:contentDescription="left image"
+        android:id="@+id/imageView8"
+        android:layout_width="395dp"
+        android:layout_height="237dp"
+        android:layout_gravity="bottom|start"
+        android:contentDescription="left image"
+        android:src="@drawable/left"
         tools:ignore="HardcodedText" />
 
 </FrameLayout>

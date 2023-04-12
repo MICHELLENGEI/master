@@ -95,13 +95,13 @@
             app:passwordToggleTint="@color/Parsley">
 
             <EditText
-                android:id="@+id/eTSignupNumberPassword"
+                android:id="@+id/eTSignupPassword"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:autofillHints="Password"
                 android:background="@color/white"
                 android:hint="Enter Password"
-                android:inputType="numberPassword"
+                android:inputType="textPassword"
                 android:maxLength="16"
                 android:maxLines="1"
                 android:paddingHorizontal="16dp"

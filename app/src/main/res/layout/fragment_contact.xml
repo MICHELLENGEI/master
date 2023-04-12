@@ -1,25 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ContactFragment"
-    >
-
-    <!-- TODO: Update blank fragment layout -->
+    tools:context=".ContactFragment">
 
 
     <TextView
         android:id="@+id/textViewMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="400dp"
         android:ems="10"
         android:text="Message :"
         android:textSize="20sp"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        tools:ignore="HardcodedText" />
 
     <EditText
         android:id="@+id/editTextTextSubject"
@@ -31,7 +28,8 @@
         android:ems="10"
         android:hint=" Enter Subject"
         android:inputType="textEmailSubject"
-        android:text="" />
+        android:text=""
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:id="@+id/textViewSubject"
@@ -39,10 +37,11 @@
         android:layout_height="wrap_content"
         android:ems="10"
         android:text="Subject :"
+        tools:ignore="HardcodedText"
         android:textStyle="bold"
         android:textSize="20sp"
         android:layout_marginTop="300dp"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
          />
 
     <EditText
@@ -55,16 +54,18 @@
         android:layout_marginRight="10dp"
         android:inputType="textEmailAddress"
         android:hint="Enter Email"
+        tools:ignore="HardcodedText"
         android:text=""/>
 
     <TextView
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp"
         android:layout_marginTop="200dp"
         android:ems="10"
         android:text="To :"
+        tools:ignore="HardcodedText"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -77,6 +78,7 @@
         android:layout_marginRight="10dp"
         android:ems="10"
         android:hint="Enter Message"
+        tools:ignore="HardcodedText"
         android:inputType="textMultiLine" />
 
     <ImageView
@@ -85,49 +87,55 @@
         android:layout_height="wrap_content"
         android:src="@drawable/images"
         android:layout_marginTop="20dp"
-        android:contentDescription="TODO" />
+        android:contentDescription="left image"
+        tools:ignore="HardcodedText"/>
 
     <ImageView
         android:id="@+id/imageViewFacebook"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="140dp"
+        android:layout_marginStart="140dp"
         android:layout_marginTop="140dp"
         android:src="@drawable/face"
-        android:contentDescription="TODO" />
+        android:contentDescription="facebook"
+        tools:ignore="HardcodedText"/>
 
     <ImageView
         android:id="@+id/imageViewTwitter"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="220dp"
+        android:layout_marginStart="220dp"
         android:layout_marginTop="140dp"
         android:src="@drawable/twit"
-        android:contentDescription="TODO" />
+        android:contentDescription="twitter"
+        tools:ignore="HardcodedText"/>
     <ImageView
         android:id="@+id/imageViewGram"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="180dp"
+        android:layout_marginStart="180dp"
         android:layout_marginTop="140dp"
         android:src="@drawable/ram"
-        android:contentDescription="TODO" />
+        android:contentDescription="instagram"
+        tools:ignore="HardcodedText"/>
 
     <Button
         android:id="@+id/buttonSendMail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Send"
+        tools:ignore="HardcodedText"
         android:layout_marginTop="560dp"
-        android:layout_marginLeft="150dp"/>
+        android:layout_marginStart="150dp"/>
 
     <ImageView
         android:id="@+id/imageView11"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/left"
-        android:layout_gravity="bottom|left"
-        android:contentDescription="TODO" />
+        android:layout_gravity="bottom|start"
+        android:contentDescription="left image"
+        tools:ignore="HardcodedText"/>
 
 
 </FrameLayout>

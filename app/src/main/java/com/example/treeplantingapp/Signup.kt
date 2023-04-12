@@ -22,15 +22,14 @@ class Signup : AppCompatActivity() {
         setContentView(binding.root)
         auth = Firebase.auth
 
+
         binding.buttonSignUp.setOnClickListener {
             val email = binding.eTSignupEmailAddress.text.toString()
-            val password = binding.eTSignupNumberPassword.text.toString()
-            if (checkAllField()) {
-                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+            val password = binding.eTSignupPassword.text.toString()
+            if (checkAllField()) { auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
-                        auth.signOut()
-                        Toast.makeText(this, "Account created Successfully", Toast.LENGTH_SHORT)
-                            .show()
+
+                        Toast.makeText(this, "Account created Successfully", Toast.LENGTH_SHORT).show()
                         val intentSignup = Intent(this, HomeActivity::class.java)
                         startActivity(intentSignup)
                         finish()
@@ -58,11 +57,11 @@ class Signup : AppCompatActivity() {
             Toast.makeText(this, "Check the Email Format", Toast.LENGTH_LONG).show()
             return false
         }
-        if (binding.eTSignupNumberPassword.text.toString() == "") {
+        if (binding.eTSignupPassword.text.toString() == "") {
             Toast.makeText(this, "Password is a required field", Toast.LENGTH_LONG).show()
             return false
         }
-        if (binding.eTSignupNumberPassword.length() <= 6) {
+        if (binding.eTSignupPassword.length() <= 6) {
             Toast.makeText(this, "Password should be at least 8 characters", Toast.LENGTH_LONG)
                 .show()
             return false

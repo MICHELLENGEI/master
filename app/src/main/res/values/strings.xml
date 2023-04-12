@@ -25,11 +25,28 @@
     <string name="attachment_summary_off">Only download attachments when manually requested</string>
     <string name="open">Open</string>
     <string name="close">Close</string>
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="total_trees_planted" />
     <string name="plant_a_tree">Plant a tree,</string>
     <string name="details" />
     <string name="areas_covered" />
     <string name="taita_busia_nairobi" />
+    <string name="location_of_tree">Location of tree</string>
+    <string name="number_of_trees">Number of trees</string>
+    <string name="add">Add</string>
+    <string name="hello">Hello</string>
+    <string name="name_of_tree">Name of tree</string>
+    <string name="people_planting">people planting</string>
+    <string name="log_out">Log Out</string>
+    <string name="about_us">About Us</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="delete_tree">Delete Tree</string>
+    <string name="hello2">Hello!</string>
+    <string-array name="spinner_items">
+        <item>Meru</item>
+        <item>Kitui</item>
+        <item>Machakos</item>
+    </string-array>
+
 </resources>

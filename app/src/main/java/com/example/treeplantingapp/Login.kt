@@ -23,21 +23,22 @@ class Login : AppCompatActivity() {
         auth = Firebase.auth
         binding.buttonLogin.setOnClickListener {
 
-            val email = binding.eTLoginEmailAddress.text.toString()
-            val password = binding.eTLoginNumberPassword.text.toString()
-            if (checkAllField()) {
 
+            val email = binding.eTLoginEmailAddress.text.toString()
+            val password = binding.eTLoginPassword.text.toString()
+            if (checkAllField()) {
                 auth.signInWithEmailAndPassword(email, password).addOnCompleteListener {
                     if (it.isSuccessful) {
                         val intentHome = Intent(this@Login, HomeActivity::class.java)
                         startActivity(intentHome)
-                        // finish()
+                        finish()
                     } else {
                         Log.e("error: ", it.exception.toString())
                     }
                 }
             }
         }
+
         binding.textViewSignUp.setOnClickListener {
             val intent = Intent(this, Signup::class.java)
             startActivity(intent)
@@ -55,11 +56,11 @@ class Login : AppCompatActivity() {
             Toast.makeText(this, "Check the Email Format", Toast.LENGTH_LONG).show()
             return false
         }
-        if (binding.eTLoginNumberPassword.text.toString() == "") {
+        if (binding.eTLoginPassword.text.toString() == "") {
             Toast.makeText(this, "Password is a required field", Toast.LENGTH_LONG).show()
             return false
         }
-        if (binding.eTLoginNumberPassword.length() <= 6) {
+        if (binding.eTLoginPassword.length() <= 6) {
             Toast.makeText(this, "Password should be at least 8 characters", Toast.LENGTH_LONG)
                 .show()
             return false

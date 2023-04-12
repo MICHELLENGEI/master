@@ -3,31 +3,18 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/home_nav"
-    android:label="home_naavgation"
+    android:label="home_navigation"
     app:startDestination="@id/homeFragment">
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.treeplantingapp.HomeFragment"
         android:label="Home"
-        tools:layout="@layout/fragment_home">
-        <action
-            android:id="@+id/action_homeFragment_to_addTreeFragment2"
-            app:destination="@id/addTreeFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/addTreeFragment"
         android:name="com.example.treeplantingapp.AddTreeFragment"
         android:label="Add a tree"
-        tools:layout="@layout/fragment_add_tree" >
-        <action
-            android:id="@+id/action_addTreeFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/aboutFragment"
-        android:name="com.example.treeplantingapp.AboutFragment"
-        android:label="About us"
-        tools:layout="@layout/fragment_about" />
+        tools:layout="@layout/fragment_add_tree"/>
     <fragment
         android:id="@+id/contactFragment"
         android:name="com.example.treeplantingapp.ContactFragment"
@@ -39,18 +26,27 @@
         android:label="Profile"
         tools:layout="@layout/fragment_profile" />
     <fragment
-        android:id="@+id/deleteTreeFragment"
-        android:name="com.example.treeplantingapp.DeleteTreeFragment"
-        android:label="Remove Tree"
-        tools:layout="@layout/fragment_delete_tree" >
-
-        <action
-            android:id="@+id/action_deleteTreeFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
-    </fragment>
+        android:id="@+id/logoutFragment"
+        android:name="com.example.treeplantingapp.LogoutFragment"
+        android:label="Log Out"
+        tools:layout="@layout/fragment_logout" />
     <fragment
-        android:id="@+id/recommendationsFragment"
-        android:name="com.example.treeplantingapp.RecommendationsFragment"
-        android:label="Tree Recommendation"
-        tools:layout="@layout/fragment_recommendations" />
+        android:id="@+id/aboutFragment"
+        android:name="com.example.treeplantingapp.AboutFragment"
+        android:label="About Us"
+        tools:layout="@layout/fragment_about" />
+    <fragment
+        android:id="@+id/recommendationFragment"
+        android:name="com.example.treeplantingapp.RecommendationFragment"
+        android:label="Trees recommendation"
+        tools:layout="@layout/fragment_recommendation" />
+    <fragment
+        android:id="@+id/listFragment"
+        android:name="com.example.treeplantingapp.ListFragment"
+        android:label="Planted Trees"
+        tools:layout="@layout/fragment_list" >
+        <action
+            android:id="@+id/action_listFragment_to_addTreeFragment"
+            app:destination="@id/addTreeFragment" />
+    </fragment>
 </navigation>

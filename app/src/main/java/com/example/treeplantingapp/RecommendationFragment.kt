@@ -5,17 +5,19 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import com.example.treeplantingapp.data.County
 import com.example.treeplantingapp.databinding.FragmentRecommendationBinding
 
 
 class RecommendationFragment : Fragment() {
     private var _binding: FragmentRecommendationBinding? = null
     private val binding get() = _binding!!
-    private lateinit var meruAdapter: MeruAdapter
-    private var meruList = arrayListOf<Meru>()
+    private lateinit var countyTreeAdapter: CountyTreeAdapter
+    private var displayList = arrayListOf<CountyTree>()
 
 
     override fun onCreateView(
@@ -33,27 +35,48 @@ class RecommendationFragment : Fragment() {
 
         val spinner = binding.locationSpinner
         //Create an array of items for the spinner
-        val items = arrayOf(
-            "Meru",
-            "Kitui"
+        val items = arrayOf<County>(
+            County(code = 1, name = "Meru"),
+            County(code = 2, "Baringo"),
+            County(code = 3, "Taita Taveta"),
+            County(code = 4, "Kitui")
         )
+        val countyNames = arrayListOf<String>()
+        items.forEach { countyNames.add(it.name) }
+
         // Initialize the spinner adapter
-        var adapter = ArrayAdapter(requireContext(), R.layout.simple_spinner_dropdown_item, items)
+        val adapter = ArrayAdapter(requireContext(),
+            R.layout.simple_spinner_dropdown_item, countyNames.toArray())
+
         spinner.adapter = adapter
 
         // Set an on item selected listener on the spinner
 
-        val meruViewModel: MeruViewModel = ViewModelProvider(this)[MeruViewModel::class.java]
-        meruList = meruViewModel.meruList
+        val countyTreeViewModel: CountyTreeViewModel = ViewModelProvider(this)[CountyTreeViewModel::class.java]
 
-        initRecyclerView()
+        spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(
+                parent: AdapterView<*>?, view: View?, position: Int, id: Long,
+            ) {
+                val currentItem = items[position]
+                displayList = countyTreeViewModel.getDisplayList(currentItem.code)
 
+               initRecyclerView()
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+
+            }
+        }
+
+      //  initRecyclerView()
     }
 
+
     private fun initRecyclerView() {
-        meruAdapter = MeruAdapter(meruList)
+        countyTreeAdapter = CountyTreeAdapter(displayList)
         binding.recyclerView.apply {
-            adapter = meruAdapter
+            adapter = countyTreeAdapter
         }
     }
 

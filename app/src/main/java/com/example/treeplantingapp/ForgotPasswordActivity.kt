@@ -21,16 +21,15 @@ class ForgotPasswordActivity : AppCompatActivity() {
         auth = Firebase.auth
         binding.btnReset.setOnClickListener {
             val email = binding.forgotPasswordEmailAddress.text.toString()
-            if (checkAllField()){
+            if (checkAllField()) {
                 auth.sendPasswordResetEmail(email).addOnCompleteListener {
-                    if(it.isSuccessful){
+                    if (it.isSuccessful) {
                         auth.signOut()
-                        Toast.makeText(this,"Email Sent",Toast.LENGTH_SHORT).show()
-                        val intentLogin = Intent(this,Login::class.java)
+                        Toast.makeText(this, "Email Sent", Toast.LENGTH_SHORT).show()
+                        val intentLogin = Intent(this, Login::class.java)
                         startActivity(intentLogin)
                         finish()
-                    }
-                    else{
+                    } else {
                         Log.e("error: ", it.exception.toString())
                     }
                 }
@@ -38,7 +37,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
 
         }
         binding.btnCancel.setOnClickListener {
-            val intentCancel = Intent(this,MainActivity::class.java)
+            val intentCancel = Intent(this, MainActivity::class.java)
             startActivity(intentCancel)
             finish()
         }

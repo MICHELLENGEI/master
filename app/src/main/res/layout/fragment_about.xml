@@ -11,9 +11,9 @@
         android:layout_marginStart="120dp"
         android:layout_marginTop="30dp"
         android:text="About Us"
-        tools:ignore="HardcodedText"
         android:textColor="@color/Forest_Green"
-        android:textSize="30sp" />
+        android:textSize="30sp"
+        tools:ignore="HardcodedText" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -21,23 +21,23 @@
         android:layout_marginLeft="20dp"
         android:layout_marginTop="140dp"
         android:layout_marginRight="20dp"
-        tools:ignore="HardcodedText"
         android:text="Reforestation of the planet is our objective. One of the best ways to combat climate change has been shown to be by planting trees.
 Via the Tree-Nation platform, we seek to provide a technical solution to the issue of deforestation, which is accountable for roughly 17% of all emissions that contribute to climate change.
 We want to leverage technology to make planting trees simple and to offer assistance, guidance, and solutions to businesses and communities as they make the transition to a sustainable future.
 We care to restore and conserve the biodiversity since tropical forests are home to 85% of all terrestrial species, whose existence is inextricably linked to the forests and their habitat."
         android:textAlignment="center"
         android:textSize="15sp"
-        android:textStyle="italic" />
+        android:textStyle="italic"
+        tools:ignore="HardcodedText" />
 
     <ImageView
         android:id="@+id/imageView8"
         android:layout_width="395dp"
         android:layout_height="237dp"
         android:layout_gravity="bottom|start"
-        tools:ignore="HardcodedText"
+        android:contentDescription="image left"
         android:src="@drawable/left"
-        android:contentDescription="image left" />
+        tools:ignore="HardcodedText" />
 
 
 </FrameLayout>

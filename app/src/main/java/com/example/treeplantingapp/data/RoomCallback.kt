@@ -11,14 +11,14 @@ import javax.inject.Inject
 
 class StartingTrees @Inject constructor(
     private val context: Context,
-    private val database: TreeDatabase? = null
-    ) : RoomDatabase.Callback() {
+    private val database: TreeDatabase? = null,
+) : RoomDatabase.Callback() {
     override fun onCreate(db: SupportSQLiteDatabase) {
         super.onCreate(db)
         fillWithStartingNotes(context)
     }
 
-    private fun loadJSONArray(context: Context): JSONArray?{
+    private fun loadJSONArray(context: Context): JSONArray? {
         val inputStream = context.resources.openRawResource(R.raw.constituencies)
 
         BufferedReader(inputStream.reader()).use {
@@ -26,17 +26,17 @@ class StartingTrees @Inject constructor(
         }
     }
 
-    private fun fillWithStartingNotes(context: Context){
+    private fun fillWithStartingNotes(context: Context) {
 
         val dao = database?.constituencyDao
 
         try {
             val constituencies = loadJSONArray(context)
-            if (constituencies != null){
+            if (constituencies != null) {
 
                 val constituencyArray = arrayListOf<Constituency>()
 
-                ( 0 until constituencies.length()).forEach{ index ->
+                (0 until constituencies.length()).forEach { index ->
                     val item = constituencies.getJSONObject(index)
 
                     val name = item.getString("name")
@@ -49,9 +49,7 @@ class StartingTrees @Inject constructor(
                 }
                 dao?.insertAll(constituencyArray)
             }
-        }
-
-        catch (e: JSONException) {
+        } catch (e: JSONException) {
             // Timber.d("fillWithStartingNotes: $e")
         }
     }

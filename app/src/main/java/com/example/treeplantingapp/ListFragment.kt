@@ -5,18 +5,17 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.NavController
+import androidx.navigation.fragment.findNavController
 import com.example.treeplantingapp.data.Tree
 import com.example.treeplantingapp.databinding.FragmentListBinding
 
 class ListFragment : Fragment() {
     lateinit var binding: FragmentListBinding
-    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentListBinding.inflate(layoutInflater)
         return binding.root
@@ -49,7 +48,7 @@ class ListFragment : Fragment() {
             adapter = listAdapter
         }
         binding.floatingButton.setOnClickListener {
-            navController.navigate(R.id.action_listFragment_to_addTreeFragment)
+            findNavController().navigate(R.id.action_listFragment_to_addTreeFragment)
         }
     }
 }

@@ -16,13 +16,14 @@ class LogoutFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         // Inflate the layout for this fragment
-        binding=FragmentLogoutBinding.inflate(layoutInflater)
+        binding = FragmentLogoutBinding.inflate(layoutInflater)
         auth = FirebaseAuth.getInstance()
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 

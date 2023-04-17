@@ -8,7 +8,7 @@ data class Constituency(
     @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val name: String,
-    val wards: List<String>
+    val wards: List<String>,
 )
 
 /**
@@ -17,4 +17,4 @@ data class Constituency(
  * If Room doesn't know how to save List<String>, Add type converter for it
  *
  *
-**/
+ **/

@@ -10,7 +10,9 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.navigation.NavigationView
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class HomeActivity : AppCompatActivity() {
 
     private lateinit var navController: NavController
@@ -26,8 +28,8 @@ class HomeActivity : AppCompatActivity() {
         drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
         navigationView = findViewById(R.id.navigationView)
 
-       navigationView.setupWithNavController(navController)
-       appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+        navigationView.setupWithNavController(navController)
+        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
 
         setupActionBarWithNavController(navController, appBarConfiguration)
     }

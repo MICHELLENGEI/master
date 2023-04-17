@@ -19,35 +19,37 @@
         android:id="@+id/editTextTreeName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/name_of_tree"
-        android:textSize="20sp"
-        android:inputType="text"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="400dp"
-        android:autofillHints="" />
+        android:layout_marginRight="20dp"
+        android:autofillHints=""
+        android:hint="@string/name_of_tree"
+        android:inputType="text"
+        android:textSize="20sp" />
+
     <EditText
         android:id="@+id/editTextTreeLocation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/location_of_tree"
-        android:textSize="20sp"
-        android:inputType="text"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="460dp"
-        android:autofillHints="" />
+        android:layout_marginRight="20dp"
+        android:autofillHints=""
+        android:hint="@string/location_of_tree"
+        android:inputType="text"
+        android:textSize="20sp" />
+
     <EditText
         android:id="@+id/editTextNumber0fTrees"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="@string/number_of_trees"
-        android:textSize="20sp"
-        android:inputType="number"
         android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
         android:layout_marginTop="520dp"
-        android:autofillHints="" />
+        android:layout_marginRight="20dp"
+        android:autofillHints=""
+        android:hint="@string/number_of_trees"
+        android:inputType="number"
+        android:textSize="20sp" />
 
     <Button
         android:id="@+id/addTree"
@@ -56,16 +58,15 @@
         android:layout_marginStart="160dp"
         android:layout_marginTop="600dp"
         android:text="@string/add"
-        android:textSize="20sp"/>
+        android:textSize="20sp" />
 
     <ImageView
         android:id="@+id/imageView12"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/left"
         android:layout_gravity="bottom|start"
         android:contentDescription="@string/people_planting"
-         />
+        android:src="@drawable/left" />
 
 
 </FrameLayout>

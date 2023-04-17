@@ -12,6 +12,6 @@ interface TreeDao {
     @Insert(onConflict = OnConflictStrategy.IGNORE)
     suspend fun addTree(tree: Tree)
 
-     @Query("SELECT * FROM trees_planted_data_table ORDER BY id ASC")
-     fun readAllData() : LiveData<List<Tree>>
+    @Query("SELECT * FROM trees_planted_data_table ORDER BY id ASC")
+    fun readAllData(): LiveData<List<Tree>>
 }

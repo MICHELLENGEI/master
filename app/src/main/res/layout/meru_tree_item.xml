@@ -25,8 +25,8 @@
                 android:id="@+id/idTextViewRecommend"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1"
                 android:paddingHorizontal="15dp"
+                android:text="1"
                 android:textSize="20sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -41,8 +41,8 @@
                 android:text="Name:"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toEndOf="@+id/idTextViewRecommend"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,11 +73,11 @@
                 android:id="@+id/textViewTreeUsage"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                app:layout_constraintHorizontal_bias="0"
-                android:textSize="15sp"
                 android:text="Fencing, Carving,Timber"
+                android:textSize="15sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0"
                 app:layout_constraintStart_toStartOf="@+id/textViewTreeNameRecommend"
                 app:layout_constraintTop_toBottomOf="@+id/textViewTreeNameRecommend"
                 tools:ignore="HardcodedText" />

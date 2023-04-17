@@ -15,7 +15,7 @@ class ContactFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
-        savedInstanceState: Bundle?
+        savedInstanceState: Bundle?,
     ): View {
         binding = FragmentContactBinding.inflate(layoutInflater)
         return binding.root

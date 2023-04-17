@@ -1,5 +1,6 @@
 package com.example.treeplantingapp
 
+//noinspection SuspiciousImport
 import android.R
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -52,7 +53,8 @@ class RecommendationFragment : Fragment() {
 
         // Set an on item selected listener on the spinner
 
-        val countyTreeViewModel: CountyTreeViewModel = ViewModelProvider(this)[CountyTreeViewModel::class.java]
+        val countyTreeViewModel: CountyTreeViewModel =
+            ViewModelProvider(this)[CountyTreeViewModel::class.java]
 
         spinner.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
             override fun onItemSelected(
@@ -61,7 +63,7 @@ class RecommendationFragment : Fragment() {
                 val currentItem = items[position]
                 displayList = countyTreeViewModel.getDisplayList(currentItem.code)
 
-               initRecyclerView()
+                initRecyclerView()
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
@@ -69,9 +71,8 @@ class RecommendationFragment : Fragment() {
             }
         }
 
-      //  initRecyclerView()
+        //  initRecyclerView()
     }
-
 
     private fun initRecyclerView() {
         countyTreeAdapter = CountyTreeAdapter(displayList)

@@ -26,10 +26,12 @@ class Signup : AppCompatActivity() {
         binding.buttonSignUp.setOnClickListener {
             val email = binding.eTSignupEmailAddress.text.toString()
             val password = binding.eTSignupPassword.text.toString()
-            if (checkAllField()) { auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
+            if (checkAllField()) {
+                auth.createUserWithEmailAndPassword(email, password).addOnCompleteListener { task ->
                     if (task.isSuccessful) {
 
-                        Toast.makeText(this, "Account created Successfully", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Account created Successfully", Toast.LENGTH_SHORT)
+                            .show()
                         val intentSignup = Intent(this, HomeActivity::class.java)
                         startActivity(intentSignup)
                         finish()

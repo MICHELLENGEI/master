@@ -5,11 +5,12 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.treeplantingapp.databinding.MeruTreeItemBinding
 
-class CountyTreeAdapter (
+class CountyTreeAdapter(
     var meruList: ArrayList<CountyTree>,
 ) : RecyclerView.Adapter<CountyTreeAdapter.MeruViewHolder>() {
-    class MeruViewHolder(private val meru: MeruTreeItemBinding):RecyclerView.ViewHolder(meru.root){
-        fun binding(currentCountyTree: CountyTree){
+    class MeruViewHolder(private val meru: MeruTreeItemBinding) :
+        RecyclerView.ViewHolder(meru.root) {
+        fun binding(currentCountyTree: CountyTree) {
             meru.idTextViewRecommend.text = currentCountyTree.id.toString()
             meru.textViewTreeNameRecommend.text = currentCountyTree.name
             meru.textViewTreeUsage.text = currentCountyTree.uses
@@ -20,7 +21,7 @@ class CountyTreeAdapter (
         return MeruViewHolder(MeruTreeItemBinding
             .inflate(LayoutInflater
                 .from(parent.context),
-            parent,false)
+                parent, false)
         )
     }
 

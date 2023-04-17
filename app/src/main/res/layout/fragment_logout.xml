@@ -14,7 +14,8 @@
         android:textAlignment="center"
         android:textColor="@color/Forest_Green"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="HardcodedText"/>
 
     <TextView
         android:id="@+id/textView8"
@@ -25,7 +26,8 @@
         android:textAlignment="center"
         android:textColor="@color/Forest_Green"
         android:textSize="30sp"
-        tools:layout_editor_absoluteX="16dp" />
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="HardcodedText"/>
 
     <Button
         android:id="@+id/buttonCancelFrag"
@@ -33,7 +35,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="250dp"
         android:layout_marginTop="320dp"
-        android:text="Cancel" />
+        android:text="Cancel"
+        tools:ignore="HardcodedText"/>
 
     <Button
         android:id="@+id/buttonLogoutFrag"
@@ -41,7 +44,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="50dp"
         android:layout_marginTop="320dp"
-        android:text="Log Out" />
+        android:text="Log Out"
+        tools:ignore="HardcodedText"/>
 
     <ImageView
         android:id="@+id/imageView8"

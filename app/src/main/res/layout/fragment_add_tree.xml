@@ -36,7 +36,7 @@
         android:layout_marginRight="20dp"
         android:autofillHints=""
         android:hint="@string/location_of_tree"
-        android:inputType="text"
+        android:inputType="textFilter"
         android:textSize="20sp" />
 
     <EditText

@@ -7,7 +7,7 @@ import com.example.treeplantingapp.data.Tree
 import com.example.treeplantingapp.databinding.CustomRowBinding
 
 class PlantedTreesListAdapter(
-    var treeList: ArrayList<Tree>,
+    var treeList: List<Tree>,
 ) : RecyclerView.Adapter<PlantedTreesListAdapter.MyViewHolder>() {
 
     class MyViewHolder(private val tree: CustomRowBinding) : RecyclerView.ViewHolder(tree.root) {
@@ -31,5 +31,12 @@ class PlantedTreesListAdapter(
 
     override fun getItemCount(): Int {
         return treeList.size
+    }
+
+    fun setData(tree: List<Tree>) {
+        this.treeList = tree as ArrayList<Tree>
+        notifyDataSetChanged()
+
+
     }
 }

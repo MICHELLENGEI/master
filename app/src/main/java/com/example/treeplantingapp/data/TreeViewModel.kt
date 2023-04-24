@@ -1,22 +1,23 @@
 package com.example.treeplantingapp.data
 
+import android.app.Application
+import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 
-@HiltViewModel
-class TreeViewModel @Inject constructor(
-    database: TreeDatabase,
-) : ViewModel() {
-    private lateinit var readAllData: LiveData<List<Tree>>
+
+class TreeViewModel(
+    application: Application
+) : AndroidViewModel(application) {
+    var readAllData: LiveData<List<Tree>>
     private var repository: TreeRepository
 
     init {
-        val treeDao = database.treeDao
-        repository = TreeRepository(database.treeDao)
+
+        val treeDao = TreeDatabase.getDatabase(application).treeDao()
+        repository = TreeRepository(treeDao)
+        readAllData = repository.readAllData
     }
 
     fun addTree(tree: Tree) {

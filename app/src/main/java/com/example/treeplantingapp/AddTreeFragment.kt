@@ -52,8 +52,8 @@ class AddTreeFragment : Fragment() {
             Toast.makeText(requireContext(), "Tree added Successfully", Toast.LENGTH_LONG).show()
             //Navigate back
             val navController = findNavController()
-            //navController.navigate(R.id.homeFragment)
-            navController.popBackStack()
+            navController.navigate(R.id.listFragment)
+
         } else {
             Toast.makeText(requireContext(), "Fill out all fields", Toast.LENGTH_LONG).show()
         }
@@ -73,40 +73,4 @@ class AddTreeFragment : Fragment() {
         }
     }
 }
-/*private fun insertDataToDatabase() {
 
-    val treeName = binding.editTextTreeName.text.toString()
-    val treeLocation = binding.editTextTreeLocation.text.toString()
-    val treeNumber = binding.editTextNumber0fTrees.text
-
-    if (inputCheck(treeName, treeLocation, treeNumber)) {
-        //tree object
-        val tree = Tree(
-            treeName = treeName,
-            treeLocation = treeLocation,
-            treeNumber = Integer.parseInt(treeNumber.toString())
-        )
-        //add data to database
-        viewModel.addTree(tree)
-        Toast.makeText(requireContext(), "Tree added Successfully", Toast.LENGTH_LONG).show()
-        //Navigate back
-        val navController = findNavController()
-        //navController.navigate(R.id.homeFragment)
-        navController.popBackStack()
-    } else {
-        Toast.makeText(requireContext(), "Fill out all fields", Toast.LENGTH_LONG).show()
-    }
-}
-
-private fun inputCheck(
-    treeName: String,
-    treeLocation: String,
-    treeNumber: Editable): Boolean {
-    return !(TextUtils.isEmpty(treeName)
-            && TextUtils.isEmpty(treeLocation)
-            && treeNumber.isEmpty())
-}
-
-
-}
-*/

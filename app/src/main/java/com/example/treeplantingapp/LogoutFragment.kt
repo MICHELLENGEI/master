@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.treeplantingapp.databinding.FragmentLogoutBinding
 import com.google.firebase.auth.FirebaseAuth
 
-// TODO: finish up log out
+
 class LogoutFragment : Fragment() {
     private lateinit var binding: FragmentLogoutBinding
     private lateinit var auth: FirebaseAuth
@@ -30,7 +30,7 @@ class LogoutFragment : Fragment() {
         binding.buttonLogoutFrag.setOnClickListener {
             auth.signOut()
             val navController = findNavController()
-            navController.navigate(R.id.homeFragment)
+            navController.navigate(R.id.mainActivity)
         }
         binding.buttonCancelFrag.setOnClickListener {
             val navController = findNavController()
